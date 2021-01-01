@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/border_set"
+    android:layout_height="@dimen/height_linear_layout_product_item"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/product_item_container_linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:baselineAligned="false">
+
+        <!-- Linear layout para la img -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="5dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/product_item_image_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/image_placeholder"
+                android:contentDescription="@string/app_name" />
+
+        </LinearLayout>
+
+        <!-- Linear layout para la info -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.6"
+            android:padding="5dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <!-- titulo -->
+            <TextView
+                android:id="@+id/product_item_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="@string/product_item_title_text_placeholder"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_size_all_default_text" />
+
+            <!-- espaceado -->
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_height_all_default"/>
+
+            <!-- precio -->
+            <TextView
+                android:id="@+id/product_item_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="@string/product_item_price_text_placeholder"
+                android:textSize="@dimen/text_size_all_default_text" />
+
+            <!-- espaceado -->
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_height_all_default"/>
+
+            <!-- cantidad disponible -->
+            <TextView
+                android:id="@+id/product_item_available_quantity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="@string/product_item_available_quantity_text_placeholder"
+                android:textSize="@dimen/text_size_all_small_text" />
+
+            <!-- nuevo o usado -->
+            <TextView
+                android:id="@+id/product_item_condition"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="@string/product_item_condition_text_placeholder"
+                android:textSize="@dimen/text_size_all_small_text" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

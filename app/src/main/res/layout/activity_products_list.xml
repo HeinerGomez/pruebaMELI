@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="viewmodel"
+            type="com.avility.pruebameli.activity.productsList.viewModel.ProductsListViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activity.productsList.view.ProductsListActivityImpl">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/products_list_appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:liftOnScroll="true">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/products_list_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/products_list_search_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="false"
+            app:iconifiedByDefault="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/products_list_appbar"
+            app:queryHint="@string/products_list_search_view_placeholder" />
+
+        <ImageView
+            android:id="@+id/products_list_image_search"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_image_view_placeholder_image"
+            android:layout_marginStart="@dimen/margin_side_image_view_placeholder_image"
+            android:layout_marginEnd="@dimen/margin_side_image_view_placeholder_image"
+            android:background="@drawable/ic_un_draw_search"
+            android:contentDescription="@string/app_name"
+            android:visibility="@{viewmodel.withoutSearch ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/products_list_search_view" />
+
+        <TextView
+            android:id="@+id/products_list_tv_label_image_placeholder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top_all_default"
+            android:text="@string/products_list_text_view_placeholder"
+            android:textAlignment="center"
+            android:textColor="@color/colorSecondaryText"
+            android:textSize="@dimen/text_size_all_medium_text"
+            android:visibility="@{viewmodel.withoutSearch ? View.VISIBLE : View.GONE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/products_list_image_search" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/products_list_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/margin_top_all_default"
+            android:visibility="@{viewmodel.loading ? View.GONE : View.VISIBLE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/products_list_search_view" />
+
+        <ProgressBar
+            android:layout_width="@dimen/size_progress_bar_medium"
+            android:layout_height="@dimen/size_progress_bar_medium"
+            android:visibility="@{viewmodel.loading ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ProgressBar
+            android:layout_width="@dimen/size_progress_bar_small"
+            android:layout_height="@dimen/size_progress_bar_small"
+            android:visibility="@{viewmodel.loadingMoreProducts ? View.VISIBLE : View.GONE}"
+            android:layout_marginBottom="@dimen/margin_top_all_default"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

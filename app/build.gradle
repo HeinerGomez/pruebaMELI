@@ -1,0 +1,93 @@
+apply plugin: 'com.android.application'
+
+def API_URL = apiUrl ?: 'No url root'
+
+android.buildTypes.each { type ->
+    type.buildConfigField 'String', 'API_URL', API_URL
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "com.avility.pruebameli"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    splits {
+        abi {
+            enable true
+            universalApk true
+        }
+    }
+}
+
+dependencies {
+    // variables para controlar las versiones de las librerias que instalemos
+    def lifecycle_version = "2.2.0"
+    def butter_knife_version = "10.1.0"
+    def glide_version = "4.11.0"
+    def retrofit_version = "2.9.0"
+    def material_design_version = "1.2.1"
+    def recycler_view_version = "1.1.0"
+    def rx_java_version = "2.2.19"
+    def android_rx_version = "2.1.1"
+
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.13'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    // Recycler view
+    implementation "com.google.android.material:material:$material_design_version"
+    implementation "androidx.recyclerview:recyclerview:$recycler_view_version"
+
+    // ViewModel and LiveData
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+
+    // Butter Knife
+    implementation "com.jakewharton:butterknife:$butter_knife_version"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$butter_knife_version"
+
+    // Glide
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+
+    // Rx Retrofit
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
+
+    // Rx android
+    implementation "io.reactivex.rxjava2:rxjava:$rx_java_version"
+
+    // Rx java
+    implementation "io.reactivex.rxjava2:rxandroid:$android_rx_version"
+
+}

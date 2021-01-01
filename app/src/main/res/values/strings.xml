@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">PruebaMELI</string>
+    <string name="products_list_title_toolbar">Listado de productos</string>
+    <string name="products_list_search_view_placeholder">Busca en mercado libre</string>
+    <string name="products_list_text_view_placeholder">Busca lo que quieras en mercado libre</string>
+    <string name="products_list_error_search_products">Ha ocurrido un error al realizar la busqueda</string>
+    <string name="product_item_title_text_placeholder">Iphone x 64gb Usado</string>
+    <string name="product_item_price_text_placeholder">$ 2.099.000</string>
+    <string name="product_item_available_quantity_text">%1$d Disponible(s)</string>
+    <string name="product_item_condition_text_placeholder">Usado</string>
+    <string name="product_item_condition_text_new">Nuevo</string>
+    <string name="product_item_condition_text_used">Usado</string>
+    <string name="detail_product_title_toolbar">Detalle del producto</string>
+    <string name="detail_product_sold_quantity">%1$d Vendido(s)</string>
+</resources>

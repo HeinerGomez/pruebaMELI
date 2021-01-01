@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_size_all_default_text">16sp</dimen>
+    <dimen name="text_size_all_small_text">14sp</dimen>
+    <dimen name="text_size_all_medium_text">20sp</dimen>
+    <dimen name="text_size_all_big_text">30sp</dimen>
+    <dimen name="margin_side_image_view_placeholder_image">20dp</dimen>
+    <dimen name="height_image_view_placeholder_image">200dp</dimen>
+    <dimen name="margin_top_all_default">20dp</dimen>
+    <dimen name="margin_top_all_medium">30dp</dimen>
+    <dimen name="margin_left_all_default">20dp</dimen>
+    <dimen name="margin_right_all_default">20dp</dimen>
+    <dimen name="space_height_all_default">10dp</dimen>
+    <dimen name="height_linear_layout_product_item">180dp</dimen>
+    <dimen name="size_progress_bar_medium">60dp</dimen>
+    <dimen name="size_progress_bar_small">30dp</dimen>
+    <dimen name="width_image_view_detail_product">200dp</dimen>
+    <dimen name="height_image_view_detail_product">300dp</dimen>
+</resources>

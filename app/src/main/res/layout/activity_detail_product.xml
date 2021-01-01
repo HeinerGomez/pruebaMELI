@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="viewmodel"
+            type="com.avility.pruebameli.activity.detailProduct.viewModel.DetailProductViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activity.detailProduct.view.DetailProductActivityImpl">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/detail_product_appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:liftOnScroll="true">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/detail_product_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <TextView
+            android:id="@+id/detail_product_tv_condition_and_sold_quantity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_size_all_small_text"
+            android:layout_marginTop="@dimen/margin_top_all_default"
+            android:layout_marginStart="@dimen/margin_left_all_default"
+            android:textColor="@color/colorSecondaryText"
+            app:layout_constraintTop_toBottomOf="@id/detail_product_appbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/detail_product_tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="@string/product_item_title_text_placeholder"
+            android:layout_marginTop="@dimen/margin_top_all_default"
+            android:layout_marginStart="@dimen/margin_left_all_default"
+            android:textSize="@dimen/text_size_all_medium_text"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/detail_product_tv_condition_and_sold_quantity"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+        
+        <ImageView
+            android:id="@+id/detail_product_image_view"
+            android:layout_width="@dimen/width_image_view_detail_product"
+            android:layout_height="@dimen/height_image_view_detail_product"
+            android:layout_marginTop="@dimen/margin_top_all_medium"
+            android:contentDescription="@string/app_name"
+            tools:src="@drawable/image_placeholder"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/detail_product_tv_title" />
+
+        <TextView
+            android:id="@+id/detail_product_tv_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top_all_default"
+            android:layout_marginStart="@dimen/margin_left_all_default"
+            android:layout_marginEnd="@dimen/margin_right_all_default"
+            android:textSize="@dimen/text_size_all_big_text"
+            tools:text="@string/product_item_price_text_placeholder"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/detail_product_image_view" />
+
+        <TextView
+            android:id="@+id/detail_product_available_quantity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorSecondaryText"
+            android:layout_marginStart="@dimen/margin_left_all_default"
+            android:layout_marginEnd="@dimen/margin_right_all_default"
+            tools:text="@string/product_item_available_quantity_text"
+            android:textSize="@dimen/text_size_all_default_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/detail_product_tv_price"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
